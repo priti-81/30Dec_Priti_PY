@@ -1,6 +1,7 @@
 from collections import Counter
-s =[{'item': 'item1', 'amount': 400},{'item': 'item2', 'amount': 
-300},{'item': 'item1', 'amount': 750}]
+s =[{'item': 'item1', 'amount': 400},
+    {'item': 'item2', 'amount': 300},
+    {'item': 'item1', 'amount': 750}]
 '''result=Counter()
 for d in s:
     print(d)
@@ -10,11 +11,13 @@ print(result)'''
 res=dict()
 for a in s:
     for a1 in a:
-        if a1=='amount':
+        """ if a1=='amount':
             pass
-        else:
-            if a[a1] not in res:
-                res[a[a1]]=a['amount']
+        else: """
+        
+        if(a1=='item'):
+            if a['item'] not in res:
+                res[a['item']]=a['amount']
             else:
-                res[a[a1]]+=a['amount']
+                res[a['item']]+=a['amount']
 print(res)
