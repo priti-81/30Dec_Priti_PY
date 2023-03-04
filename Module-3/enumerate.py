@@ -1,14 +1,19 @@
 d={'1': ['a','b'], '2': ['c','d']}
-#res=[(x,y) for idx,x in enumerate(d1) for y in d1[idx+1: ]]
-#print(res)
+
 """ from itertools import combinations
 res=list(combinations(d1,2))
 print(res) """
-""" for j in range(len(d.values())):
-        for a in range(len(d.values())):
-            print(d['1'][j]+d['2'][a],end=' ') """
+# dynamic solution
+l=list(d.keys())
+sum=[]
+for j in range(len(list(d[l[0]]))):
+        for a in range(len(d[l[0]])):
+            sum.append(d[l[0]][j]+d[l[1]][a])
+print(*sum)   
+            
 
-for j,k in d.items():
+#dynamic solution
+""" for j,k in d.items():
     #print(j,k)
     for a in k:
         
@@ -16,10 +21,7 @@ for j,k in d.items():
         #print(nindex)
         if(nindex<len(d)-1):
             nkey=list(d.keys())[nindex+1]
-           # print(nkey)
+            #print(nkey)
             res=map(lambda i:a+i,d[nkey])
-            print(list(res))
-            #print(a+d[nkey][k.index(a)])
-        #print(a+d.keys())
-        print(d['1'][j]+d['2'][a],end=' ')
-        
+            print(*res)
+             """
