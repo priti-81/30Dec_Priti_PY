@@ -1,4 +1,4 @@
-d={'1': ['a','b'], '2': ['c','d']}
+d={'1': ['a','b','c'], '2': ['c','d','e']}
 
 """ from itertools import combinations
 res=list(combinations(d1,2))
