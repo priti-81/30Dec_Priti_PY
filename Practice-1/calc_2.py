@@ -3,7 +3,7 @@ from math import *
 w = Tk()
 w.geometry('350x600')
 w.title('Calculator')
-w.iconbitmap('icon.ico')
+w.iconbitmap('D:/icon-1.ico')
 
 scvalue=StringVar()
 input_v=''
