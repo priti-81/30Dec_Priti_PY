@@ -17,7 +17,7 @@ except Exception as e:
 
     tbl_name=input('enter taable name: ')
     
-create_tbl="create table Book (id integer primary key auto_increment courseorder,BookAuthor varchar(20),BookTitle text)"
+create_tbl="create table Book (id integer primary key auto_increment,BookAuthor varchar(20),BookTitle text)"
     
 try:
     cur.execute(create_tbl)
