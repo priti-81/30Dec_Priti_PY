@@ -59,5 +59,5 @@ def choice():
         elif x==4:
             exit()
                     
-# prent()
-# choice()
+prent()
+choice()
