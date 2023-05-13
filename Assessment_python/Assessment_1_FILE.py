@@ -58,6 +58,8 @@ def choice():
                 view_note(a,b,c)
         elif x==4:
             exit()
-                    
-prent()
-choice()
+
+
+if __name__=="__main__"  :      
+    prent()
+    choice()
