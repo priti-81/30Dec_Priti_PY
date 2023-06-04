@@ -16,4 +16,9 @@ print(rules.get(7,"not there"))
 #print(key(5))
 
 
- """
+"""
+p='piuygmail.com'
+n="kjhk"
+r='rakesh'
+s=[p,n,r]
+print("" in s)

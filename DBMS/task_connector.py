@@ -14,8 +14,7 @@ try:
 except Exception as e:
     print(e)
 
-
-    tbl_name=input('enter taable name: ')
+#tbl_name=input('enter taable name: ')
     
 create_tbl="create table Book (id integer primary key auto_increment,BookAuthor varchar(20),BookTitle text)"
     
