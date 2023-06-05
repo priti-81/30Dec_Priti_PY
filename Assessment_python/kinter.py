@@ -10,7 +10,7 @@ try:
 except Exception as e:
     print(e)
 
-create_tbl="create table registeruser (id integer primary key auto_increment, Name varchar(20),contact int(10),Email varchar(20), Gender varchar(10),city varchar(10),state varchar(10))"
+""" create_tbl="create table registeruser (id integer primary key auto_increment, Name varchar(20),contact int(10),Email varchar(20), Gender varchar(10),city varchar(10),state varchar(10))"
 
 try:
     cur.execute(create_tbl)
@@ -18,7 +18,7 @@ try:
 
 except Exception as e:
     print(e)
-
+ """
 
 # tkinter project part
 w = Tk()
@@ -57,8 +57,15 @@ def submit():
     else:
             messagebox.showinfo("Success..", "your registration done successfully..") 
             w.quit()
-    
-    return print(f'{n},{c},{e},{t},{s},{output}')
+    insert_data=f"insert into registeruser(Name,contact,Email,Gender,city,state) values('{n}','{t}','{e}','{output}','{c}','{s}')"
+    try:
+        cur.execute(insert_data)
+        mydb.commit()
+        print('Record inserted successfully..')
+    except Exception as ex:
+        print(ex)
+        
+    # return print(f'{n},{c},{e},{t},{s},{output}')
 
 def validation1():
     try:
@@ -70,7 +77,6 @@ def validation1():
 
     
 def validation2():
-    e=email.get()
     try:
         if '@'not in email.get() :
               messagebox.showerror("error!", "please! write proper email")  
