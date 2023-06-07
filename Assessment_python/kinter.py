@@ -77,6 +77,7 @@ def validation1():
 
     
 def validation2():
+
     try:
         if '@'not in email.get() :
               messagebox.showerror("error!", "please! write proper email")  
