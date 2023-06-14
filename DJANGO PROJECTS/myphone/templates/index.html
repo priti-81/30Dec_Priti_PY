@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      .container{ 
+        margin-top: 50px;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Add Products</h1><br>
+    <form class="row g-3 needs-validation" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+
+        <div class="col-md-4">
+          <label class="form-label">Product name</label>
+         
+        
+          <select class="form-control" name="product"  >
+          
+          
+            <option selected disabled value="0">Choose product</option>
+            
+            {% for i in data1 %}
+                   <option value="{{i.id}}">{{ i.productname}}</option>
+              
+            {% endfor %}
+            
+            
+          </select>
+          
+        </div>
+        
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">Product Price</label>
+          <input type="number" class="form-control" id="validationCustom02" name="productprice"required>
+          
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername" class="form-label">Product image</label>
+          <div class="input-group has-validation">
+            <input type="file" class="form-control"name="productimage" id="validationCustomUsername" aria-describedby="inputGroupPrepend" > 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Product model</label>
+          <input type="text" name="productmodel" class="form-control" id="validationCustom03" required>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom04" class="form-label">ProductRAM</label>
+          <input type="text" name="productRAM" class="form-control" id="validationCustom03" required>
+        </div>
+        
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" >Submit</button>
+          <a class="btn btn-success" href="showdata/" >Showdata</a>
+        </div>
+      </form>
+    </div>
+    
+</body>
+</html>
