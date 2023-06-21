@@ -19,24 +19,28 @@
     <table class="table">
         <thead>
           <tr>
+            <th scope="col">productID</th>
             <th scope="col">productname</th>
             <th scope="col">productprice</th>
             <th scope="col">productimage</th>
             <th scope="col">product model</th>
             <th scope="col">product RAM</th>
+            <th scope="col">Delete Product</th>
+            
 
           </tr>
         </thead>
      
         <tbody>
           <tr>
-      {% for i in getdata %}    
-
+      {% for i in getdata %}  
+            
+            <td >{{i.id}}</td>
             <td >{{i.product}}</td>
             <td>{{i.productprice}}</td>
             {% if i.productimage %}
               <td>
-                <image src="{{i.productimage.url}}" alt="" class= "prod-size"></image>
+                <image src="{{i.productimage.url}}" alt="mobile" class= "prod-size" height="100px"></image>
               </td>
             {% else %}
                <td>{{i.productimage}}</td>
@@ -44,7 +48,11 @@
 
             <td>{{i.productmodel}}</td>
             <td>{{i.productRAM}} </td> 
-            
+            <td>
+              <div class="col-12">
+                <a class="btn btn-danger" href="/delete/{{i.id}}" >Delete</a>
+              </div>
+            </td>
           </tr>
         </tbody>
          

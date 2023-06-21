@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import productForm
 from .models import product,productdetails
 
@@ -21,3 +21,8 @@ def showdata(request):
     get_data=productdetails.objects.all()
     print(get_data)
     return render (request,'showdata.html',{'getdata':get_data})
+
+def delete(request,id):
+    deleteid = productdetails.objects.get(id=id)
+    productdetails.delete(deleteid)
+    return redirect ('showdata')

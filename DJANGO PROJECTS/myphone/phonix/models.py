@@ -10,7 +10,7 @@ class product(models.Model):
 class productdetails(models.Model):
     product=models.ForeignKey(product,null=True,on_delete=models.CASCADE)
     productprice=models.FloatField()
-    productimage=models.ImageField(upload_to='media',blank=True)
+    productimage=models.ImageField(upload_to='images',blank=True)
     productmodel=models.CharField(max_length=30)
     productRAM=models.CharField(max_length=20)
 
