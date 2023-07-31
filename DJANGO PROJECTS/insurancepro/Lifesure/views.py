@@ -27,6 +27,7 @@ def login(request):
         pas=request.POST['password']
  
         uservalue=Login.objects.filter(username=unm,password=pas).values()
+        print(uservalue)
         id=uservalue[0]['id']
         ut=uservalue[0]['userType']
         print(id)

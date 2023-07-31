@@ -109,7 +109,7 @@
             <div class="form-group ">
               <label for="exampleInputEmail1">Premium Pay </label>
                     <select class="form-select" aria-label="Default select example" id="pay"  name="premiumPay" required>
-                      <option selected>----Open this select menu----</option>
+                      <option selected value="0">----Open this select menu----</option>
                       <option value="1">Monthly</option>
                       <option value="2">Quarterly</option>
                       <option value="3">Half-yearly</option>
@@ -139,6 +139,7 @@
       document.getElementById('year').onchange = Ex_return
       document.getElementById('amount').onchange = Ex_return 
       document.getElementById('premium').onchange = Ex_return 
+      document.getElementById('pay').onchange = Ex_return 
     
       
 
@@ -147,10 +148,14 @@
           var  year=Number(document.getElementById('year').value);
           var  amount=Number(document.getElementById('amount').value);
           var  premium = Number(document.getElementById('premium').value);
+          var  pay = document.getElementById('pay').value
           var  re_turn=  document.getElementById('return');
           let rate= 12 ;
           
-          if ( year && amount && premium && pay != "" )
+          
+          console.log( pay)  ;
+          
+          if ( (year && amount && premium  != "") &&( pay != 0 ) )
       {
           var i = (amount * rate *year)/100 ;
           var re = i + amount ;
@@ -158,6 +163,9 @@
           re_turn.setAttribute('value',re);
           console.log('hi'+ i)  ;
 
+   }
+   else{
+    re_turn.setAttribute('value', 0);
    }
 }
 
